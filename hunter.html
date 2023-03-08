@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .container{
+            display:flex;
+        }
+    </style>
+  <title>Web-apps assignment-7</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" 
+  integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" 
+  integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" 
+  integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+
+
+
+  <script>
+
+     var ids=[Image01,Image02,Image03,Image04,Image05,Image06,Image07,Image08,Image09,Image10,Image11,Image12,Image13,Image14,Image15,Image16,Image17,Image18,Image19,Image20,Image21,Image22,Image23,Image24];
+     let checkCount=0;
+     let penalty=0;
+     let lastCheck=0;
+     let mouseLocation=13;
+     let catLocation=21;
+     let gameOver=false;
+  </script>
+</head>
+<body>
+
+<div >
+  <h1>Find the mouse by Poojitha Mudupu</h1>
+ 
+  <div  style="background-color: antiquewhite;">Click on the bushes to search for the mouse, beware the cat</div>
+  <div id="bushes" class=" bg-success">Number of bushes checked is zero.</div>
+  <div id="penalty"  style="background-color:lavenderblush;">Penalty is zero.</div>
+  <div class=" bg-warning">Click for help.</div>
+  <div id="help"  style="background-color:blanchedalmond">Help report</div>
+ 
+  <br>
+  <div class="container">
+  <div class="row">
+    <div class="col-sm-2 img-thumbnail" ><img src="bush.jpg"id="Image01" onclick="check(0)" width="80" height="80"></div>
+    <div class="col-md-2 img-thumbnail" ><img src="bush.jpg" id="Image02" onclick="check(1)" width="80" height="80"></div>
+    <div class="col-sm-2 img-thumbnail" ><img src="bush.jpg" id="Image03" onclick="check(2)" width="80" height="80"></div>
+    <div class="col-sm-2 img-thumbnail" ><img src="bush.jpg" id="Image04" onclick="check(3)" width="80" height="80"></div>
+    <div class="col-sm-2 img-thumbnail"><img src="bush.jpg" id="Image05" onclick="check(4)" width="80" height="80"></div>
+    <div class="col-sm-2 img-thumbnail"><img src="bush.jpg" id="Image06" onclick="check(5)" width="80" height="80"></div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2 img-thumbnail" ><img src="bush.jpg" id="Image07" onclick="check(6)" width="80" height="80"></div>
+    <div class="col-md-2 img-thumbnail" ><img src="bush.jpg" id="Image08" onclick="check(7)" width="80" height="80"></div>
+    <div class="col-sm-2 img-thumbnail" ><img src="bush.jpg" id="Image09" onclick="check(8)" width="80" height="80"></div>
+    <div class="col-sm-2 img-thumbnail" ><img src="bush.jpg" id="Image10" onclick="check(9)" width="80" height="80"></div>
+    <div class="col-sm-2 img-thumbnail"><img src="bush.jpg" id="Image11" onclick="check(10)" width="80" height="80"></div>
+    <div class="col-sm-2 img-thumbnail"><img src="bush.jpg" id="Image12" onclick="check(11)" width="80" height="80"></div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2 img-thumbnail" ><img src="bush.jpg" id="Image13" onclick="check(12)" width="80" height="80"></div>
+    <div class="col-md-2 img-thumbnail" ><img src="bush.jpg" id="Image14" onclick="check(13)" width="80" height="80"></div>
+    <div class="col-sm-2 img-thumbnail" ><img src="bush.jpg" id="Image15" onclick="check(14)" width="80" height="80"></div>
+    <div class="col-sm-2 img-thumbnail" ><img src="bush.jpg" id="Image16" onclick="check(15)" width="80" height="80"></div>
+    <div class="col-sm-2 img-thumbnail"><img src="bush.jpg" id="Image17" onclick="check(16)" width="80" height="80"></div>
+    <div class="col-sm-2 img-thumbnail"><img src="bush.jpg" id="Image18" onclick="check(17)" width="80" height="80"></div>
+  </div>
+  </div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2 img-thumbnail" ><img src="bush.jpg" id="Image19" onclick="check(18)" width="80" height="80"></div>
+    <div class="col-md-2 img-thumbnail" ><img src="bush.jpg" id="Image20" onclick="check(19)" width="80" height="80"></div>
+    <div class="col-sm-2 img-thumbnail" ><img src="bush.jpg" id="Image21" onclick="check(20)" width="80" height="80"></div>
+    <div class="col-sm-2 img-thumbnail" ><img src="bush.jpg"  id="Image22" onclick="check(21)" width="80" height="80"></div>
+    <div class="col-sm-2 img-thumbnail"><img src="bush.jpg" id="Image23" onclick="check(22)" width="80" height="80"></div>
+    <div class="col-sm-2 img-thumbnail"><img src="bush.jpg" id="Image24" onclick="check(23)" width="80" height="80"></div>
+  </div>
+</div>
+</div>
+
+</body>
+</html>
