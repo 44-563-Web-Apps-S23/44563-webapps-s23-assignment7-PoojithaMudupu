@@ -19,18 +19,8 @@
 
 
 
-  <script>
+  
 
-     var ids=[Image01,Image02,Image03,Image04,Image05,Image06,Image07,Image08,Image09,Image10,Image11,Image12,Image13,Image14,Image15,Image16,Image17,Image18,Image19,Image20,Image21,Image22,Image23,Image24];
-     let checkCount=0;
-     let penalty=0;
-     let lastCheck=0;
-     let mouseLocation=13;
-     let catLocation=21;
-     let gameOver=false;
-  </script>
-</head>
-<body>
 
 <div >
   <h1>Find the mouse by Poojitha Mudupu</h1>
@@ -38,8 +28,8 @@
   <div  style="background-color: antiquewhite;">Click on the bushes to search for the mouse, beware the cat</div>
   <div id="bushes" class=" bg-success">Number of bushes checked is zero.</div>
   <div id="penalty"  style="background-color:lavenderblush;">Penalty is zero.</div>
-  <div class=" bg-warning">Click for help.</div>
-  <div id="help"  style="background-color:blanchedalmond">Help report</div>
+  <div class=" bg-warning" onclick="help()">Click for help.</div>
+  <div id="help"  style="background-color:blanchedalmond" onclick="help()">Help report</div>
  
   <br>
   <div class="container">
@@ -84,5 +74,90 @@
 </div>
 </div>
 
-</body>
-</html>
+
+
+
+<script>
+
+  var ids=["Image01","Image02","Image03","Image04","Image05","Image06","Image07","Image08","Image09","Image10","Image11","Image12","Image13","Image14","Image15","Image16","Image17","Image18","Image19","Image20","Image21","Image22","Image23","Image24"];
+  let checkCount=0;
+  let penalty=0;
+  let lastCheck=0;
+  let mouseLocation=13;
+  let catLocation=21;
+  let gameOver=false;
+
+
+  function check(position){
+       if(gameOver){
+           return
+       }
+        
+       else{
+           let id = ids[position]
+             if(position == mouseLocation){
+                document.getElementById(id).src = "mouse.jpg"
+            }
+         
+            else if(position == catLocation){
+                document.getElementById(id).src = "tiger.jpg";
+         }
+         
+         else{
+               document.getElementById(id).src = "grass.jpg"
+         }
+           checkCount++;
+           penalty++;
+           document.getElementById("bushes").innerHTML = "Number of bushes checked is " + checkCount + "."
+           if(position == mouseLocation){
+               gameOver = true
+               penalty -=3
+         }
+        
+         if(position == catLocation){
+             gameOver = true
+             penalty +=4
+         }
+           document.getElementById("penalty").innerHTML = "Penalty is " + penalty + "."
+           lastCheck = position
+      }
+  }
+    function help(){
+
+        
+         let mouseRow = Math.floor(mouseLocation/6)
+         let mouseColumn = mouseLocation%6
+
+         let catRow = Math.floor(catLocation/6)
+         let catColumn = catLocation%6
+
+         let lastRow = Math.floor(lastCheck/6)
+         let lastColumn = lastCheck%6
+
+         let checkRow1 = mouseRow - lastRow
+         let checkColumn1 = mouseColumn - lastColumn
+     
+         let checkRow2 = catRow - lastRow
+         let checkColumn2 = catColumn -lastColumn
+
+         
+         if((checkRow1 == 1 || checkRow1 == 0 || checkRow1 == -1) && (checkColumn1 == 1 || checkColumn1 == 0 || checkColumn1 == -1)){
+             document.getElementById("help").innerHTML = "meow"
+          }
+          
+          else if((checkRow2 == 1 || checkRow2 == 0) && (checkColumn2 == 0 || checkColumn2 == -1)){
+           document.getElementById("help").innerHTML = "squeek"
+         }
+         
+         else{
+         document.getElementById("help").innerHTML = " Sorry, no help available"
+         }
+        penalty +=2
+        document.getElementById("penalty").innerHTML = "Penalty is " + penalty + "."
+       }
+  
+
+    </script>
+
+    </body>
+    </html>

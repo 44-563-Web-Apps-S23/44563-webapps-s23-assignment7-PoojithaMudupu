@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html> <head>
+<title>Delay queue page</title>
+<style>
+    .flex-container {
+      display: flex;  flex-direction:row;
+      background-color: brown;
+  }
+
+.flex-container > div { 
+    
+  background-color: #f1f1f1; 
+  margin: 10px;  padding: 20px;  font-size: 30px;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) { 
+	 .flex-container{
+		 flex-direction:column;
+		 background-color: green;
+	  }
+	}
+</style></head>
+
+
+
+<body>
+	<h2 style="text-align: center">Poojitha Mudupu builds a delaying queue</h2>
+	
+         <input type="text" id="input1">
+	 
+           <button onclick="makeNewDiv()">Add value</button>
+		 
+               <div class="flex-container" id="target">
+		     <div class="delayQ">row item 1</div>   
+		     <div class="delayQ">row item 2</div>  
+		     <div class="delayQ">row item 3</div>  
+	      </div>
+	
+	<p> Press the button to create an new element of type div and then add it to the container.</p>
+		
+
+	<button onclick="get()">Get</button>
+	<button onclick="delay()">Delay</button>
+
+	
+   </body>
+    <script>
+	  function makeNewDiv(){
+		/* make the div and its text */
+		
+                 let element = document.createElement("div")
+		 let input = document.getElementById("input1").value
+		 element.innerHTML = input
+		 element.className = "delayQ"
+		 element.style.color = "blue"
+
+		/* add it to the container */
+		let container = document.getElementById('target')
+		container.appendChild(element)
+		
+	}
+
+	function get(){
+        let queueItems = document.getElementsByClassName("delayQ")
+        console.log(queueItems)
+        if (queueItems.length>0){
+            queueItems[0].remove()
+        }
+    }
+
+	function delay(){
+        let queueItems = document.getElementsByClassName("delayQ")
+        if(queueItems.length==0 || queueItems.length==1){
+        }
+
+        else{
+            let removedItem = queueItems[0]
+            queueItems[0].remove()
+            console.log(removedItem)
+            let container1 = document.getElementById("target")
+            container1.append(removedItem,container1.firstChild)
+        }
+    }
+</script>
+</html>
