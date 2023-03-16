@@ -27,12 +27,13 @@
          console.log(reactTime)
     }
      function startTime(){
-        for(let i=0;i<9;i++){
+        let count=Math.floor(Math.random()*9+2)
+        for(let i=0;i<count+1;i++){
            setTimeout(
               function(){
               console.log(i)
              document.getElementById("counter").innerHTML = i
-           },(8 - i) * 1000
+           },(count - i) * 1000
         )
       }
         setTimeout(

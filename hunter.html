@@ -30,6 +30,7 @@
   <div id="penalty"  style="background-color:lavenderblush;">Penalty is zero.</div>
   <div class=" bg-warning" onclick="help()">Click for help.</div>
   <div id="help"  style="background-color:blanchedalmond" onclick="help()">Help report</div>
+  <input class="btn btn-info" type="button" onclick="newGame()" value="New Game">
  
   <br>
   <div class="container">
@@ -83,8 +84,8 @@
   let checkCount=0;
   let penalty=0;
   let lastCheck=0;
-  let mouseLocation=13;
-  let catLocation=21;
+  let mouseLocation=Math.floor(Math.random()*24);
+  let catLocation=Math.floor(Math.random()*24);
   let gameOver=false;
 
 
@@ -154,6 +155,20 @@
          }
         penalty +=2
         document.getElementById("penalty").innerHTML = "Penalty is " + penalty + "."
+       }
+
+       function newGame(){
+        for(let i=0;i<ids.length;i++){
+document.getElementById(ids[i].src="bush.jpg")
+
+        }
+        checkCount=0;
+        penalty=0;
+        gameOver=false;
+        document.getElementById("bushes").innerHTML="Number of bushes checked is zero."
+        document.getElementById("penalty").innerHTML="Penalty is zero."
+        check(Math.floor(Math.random()*24))
+      
        }
   
 
